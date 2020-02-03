@@ -1,6 +1,6 @@
 package com.yogi.ecommerce.data.sources.remote
 
-import com.yogi.ecommerce.core.models.Basemdl
+import com.yogi.ecommerce.core.models.BaseMdl
 import retrofit2.Response
 import retrofit2.http.GET
 
@@ -10,5 +10,5 @@ import retrofit2.http.GET
 interface ApiServices {
 
     @GET("/home")
-    suspend fun getHomeApi(): Response<List<Basemdl>>
+    suspend fun getHomeApi(): Response<List<BaseMdl>>
 }

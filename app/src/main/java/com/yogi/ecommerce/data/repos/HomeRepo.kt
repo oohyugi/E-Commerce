@@ -1,6 +1,6 @@
 package com.yogi.ecommerce.data.repos
 
-import com.yogi.ecommerce.core.models.Basemdl
+import com.yogi.ecommerce.core.models.BaseMdl
 import com.yogi.ecommerce.core.utils.ResultState
 import com.yogi.ecommerce.data.sources.remote.HomeRemoteDataSource
 
@@ -9,14 +9,15 @@ import com.yogi.ecommerce.data.sources.remote.HomeRemoteDataSource
  */
 interface HomeRepo {
 
-    suspend fun getHome(): ResultState<List<Basemdl>>
+
+    suspend fun getHome(): ResultState<List<BaseMdl>>
 
 
-    class HomeRepoImpl(private val remoteDataSource: HomeRemoteDataSource) : HomeRepo {
-        override suspend fun getHome(): ResultState<List<Basemdl>> {
-            return remoteDataSource.getHome()
-        }
+}
 
+class HomeRepoImpl(private val remoteDataSource: HomeRemoteDataSource) : HomeRepo {
+    override suspend fun getHome(): ResultState<List<BaseMdl>> {
+        return remoteDataSource.getHome()
     }
 
 }

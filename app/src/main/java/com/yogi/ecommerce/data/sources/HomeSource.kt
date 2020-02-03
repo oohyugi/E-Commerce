@@ -1,6 +1,6 @@
 package com.yogi.ecommerce.data.sources
 
-import com.yogi.ecommerce.core.models.Basemdl
+import com.yogi.ecommerce.core.models.BaseMdl
 import com.yogi.ecommerce.core.utils.ResultState
 
 /**
@@ -8,5 +8,5 @@ import com.yogi.ecommerce.core.utils.ResultState
  */
 interface HomeSource {
 
-    suspend fun getHome(): ResultState<List<Basemdl>>
+    suspend fun getHome(): ResultState<List<BaseMdl>>
 }

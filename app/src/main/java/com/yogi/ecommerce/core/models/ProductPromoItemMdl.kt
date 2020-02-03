@@ -1,6 +1,7 @@
 package com.yogi.ecommerce.core.models
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class ProductPromoItemMdl(@SerializedName("loved")
                                val loved: Int = 0,
@@ -11,6 +12,6 @@ data class ProductPromoItemMdl(@SerializedName("loved")
                                @SerializedName("description")
                                val description: String = "",
                                @SerializedName("id")
-                               val id: String = "",
+                               val id: Any? = null,
                                @SerializedName("title")
-                               val title: String = "")
+                               val title: String = ""):Serializable

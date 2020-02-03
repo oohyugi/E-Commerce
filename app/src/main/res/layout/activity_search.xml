@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".feature.search.SearchActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorPrimary">
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search Product"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:drawableLeft="@drawable/ic_search_black_24dp"
+            android:drawablePadding="12dp"
+            android:background="@drawable/shape_textfield_primary"
+            android:padding="8dp"
+            android:inputType="text"
+            android:imeOptions="actionDone"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"/>
+    </androidx.appcompat.widget.Toolbar>
+    <androidx.recyclerview.widget.RecyclerView
+        android:padding="@dimen/activity_horizontal_margin"
+        android:clipToPadding="false"
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rvProduct"/>
+</RelativeLayout>
