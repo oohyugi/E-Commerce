@@ -13,18 +13,18 @@
 
     <fragment
         android:id="@+id/navigation_feed"
-        android:name="com.yogi.ecommerce.feature.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:name="com.yogi.ecommerce.feature.feed.FeedFragment"
+        android:label="Feed"
+        tools:layout="@layout/fragment_feed" />
 
     <fragment
         android:id="@+id/navigation_cart"
-        android:name="com.yogi.ecommerce.feature.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:name="com.yogi.ecommerce.feature.carts.CartsFragment"
+        android:label="Carts"
+        tools:layout="@layout/fragment_carts" />
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.yogi.ecommerce.feature.notifications.NotificationsFragment"
+        android:name="com.yogi.ecommerce.feature.purchased.PurchasedFragment"
         android:label="Profile"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_purchased" />
 </navigation>

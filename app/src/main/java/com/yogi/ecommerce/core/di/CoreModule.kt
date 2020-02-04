@@ -1,9 +1,19 @@
 package com.yogi.ecommerce.core.di
 
-import org.koin.dsl.ModuleDeclaration
+import com.yogi.ecommerce.core.helpers.PrefHelper
+import org.koin.android.viewmodel.dsl.viewModel
+import org.koin.dsl.module
 
 /**
  * Created by oohyugi on 2020-02-03.
  */
 
 
+val coreModule = module {
+
+    single {
+        PrefHelper(context = get())
+    }
+
+    viewModel { SharedViewModel() }
+}

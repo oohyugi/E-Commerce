@@ -14,4 +14,6 @@ data class ProductPromoItemMdl(@SerializedName("loved")
                                @SerializedName("id")
                                val id: Any? = null,
                                @SerializedName("title")
-                               val title: String = ""):Serializable
+                               val title: String = "",
+                               var qty: Int = 0
+) : Serializable

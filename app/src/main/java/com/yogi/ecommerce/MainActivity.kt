@@ -1,25 +1,22 @@
 package com.yogi.ecommerce
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.yogi.ecommerce.core.base.BaseActivity
 
 class MainActivity : BaseActivity() {
 
 
     companion object{
-        fun startThisActivity(context:Context){
+        const val EXTRA_SHOW_FRAG_PURCHASED = "purchased"
+        fun startThisActivity(context: Context, isShowPurchased: Boolean = false) {
             val intent  = Intent(context,MainActivity::class.java)
+            intent.putExtra(EXTRA_SHOW_FRAG_PURCHASED, isShowPurchased)
             context.startActivity(intent)
-            (context as Activity).finish()
 
         }
     }
@@ -33,5 +30,10 @@ class MainActivity : BaseActivity() {
         // menu should be considered as top level destinations.
 
         navView.setupWithNavController(navController)
+
+        if (intent.getBooleanExtra(EXTRA_SHOW_FRAG_PURCHASED, false)) {
+            navController.navigate(R.id.navigation_profile)
+        }
+
     }
 }
