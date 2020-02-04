@@ -1,7 +1,6 @@
 package com.yogi.ecommerce.core.di
 
 import com.yogi.ecommerce.core.helpers.PrefHelper
-import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 /**
@@ -14,6 +13,5 @@ val coreModule = module {
     single {
         PrefHelper(context = get())
     }
-
-    viewModel { SharedViewModel() }
+    
 }
