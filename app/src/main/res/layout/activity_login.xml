@@ -143,4 +143,8 @@
             android:layout_toEndOf="@+id/iconfb"
             android:layout_marginStart="@dimen/activity_horizontal_margin" />
     </RelativeLayout>
+
+
+    <include layout="@layout/loading_state" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

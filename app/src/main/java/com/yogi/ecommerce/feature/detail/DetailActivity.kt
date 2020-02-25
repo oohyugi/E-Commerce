@@ -1,19 +1,19 @@
 package com.yogi.ecommerce.feature.detail
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
 import com.bumptech.glide.Glide
 import com.yogi.ecommerce.MainActivity
 import com.yogi.ecommerce.R
 import com.yogi.ecommerce.core.base.BaseActivity
+import com.yogi.ecommerce.core.helpers.PrefHelper
 import com.yogi.ecommerce.core.models.ProductPromoItemMdl
 import kotlinx.android.synthetic.main.activity_detail.*
+import org.koin.android.ext.android.inject
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class DetailActivity : BaseActivity() {
 
@@ -31,12 +31,16 @@ class DetailActivity : BaseActivity() {
     var isFavorite = false
 
     var args: ProductPromoItemMdl? = null
+    private val detailViewModel: DetailViewModel by viewModel()
+    val prefHelper: PrefHelper by inject()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
         setSupportActionBar(toolbar)
 
         args = intent.getSerializableExtra(EXTRA_PRODUCT) as ProductPromoItemMdl
+
+
         tvName?.text = args?.title
         tvKet?.text = args?.description
         Glide.with(this).load(args?.imageUrl).into(ivDetail)
@@ -58,6 +62,17 @@ class DetailActivity : BaseActivity() {
             }
         }
 
+        btnBuy?.setOnClickListener {
+            prefHelper.saveHistory(args)
+            MainActivity.startThisActivity(this, true)
+            finish()
+        }
+        initObserve()
+
+
+    }
+
+    private fun initObserve() {
 
     }
 

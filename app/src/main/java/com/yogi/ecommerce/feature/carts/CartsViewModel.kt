@@ -1,10 +1,10 @@
-package com.yogi.ecommerce.feature.notifications
+package com.yogi.ecommerce.feature.carts
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class NotificationsViewModel : ViewModel() {
+class CartsViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = "This is notifications Fragment"

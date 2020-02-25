@@ -10,10 +10,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
 import com.yogi.ecommerce.R
 import com.yogi.ecommerce.core.base.BaseViewState
+import com.yogi.ecommerce.core.helpers.PrefHelper
 import com.yogi.ecommerce.feature.detail.DetailActivity
 import com.yogi.ecommerce.feature.search.SearchActivity
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.loading_state.*
+import org.koin.android.ext.android.inject
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment() {
@@ -21,6 +23,7 @@ class HomeFragment : Fragment() {
     private val homeViewModel: HomeViewModel by viewModel()
     private lateinit var homeAdapter: HomeAdapter
 
+    private val prefHelper: PrefHelper by inject()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -31,6 +34,8 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        tvName?.text = "Hello, ${prefHelper.getUser()}"
         initListHome()
         initObserve()
 

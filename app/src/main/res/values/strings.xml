@@ -11,4 +11,8 @@
     <string name="act_sign_with_google">Sign With Google</string>
     <string name="act_sign_with_facebook">Sign With Facebook</string>
     <string name="share">Share</string>
+
+    <string name="facebook_app_id">1114423968597471</string>
+    <string name="fb_login_protocol_scheme">fb1114423968597471</string>
+
 </resources>
