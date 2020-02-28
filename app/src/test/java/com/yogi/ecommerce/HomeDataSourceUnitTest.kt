@@ -39,7 +39,7 @@ class HomeDataSourceUnitTest {
 
         val repo = source.getHome()
 
-        assertEquals(ResultState.Success(response), repo)
+        assertEquals(ResultState.Success(""), repo)
 
     }
 
