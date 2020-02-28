@@ -20,7 +20,7 @@ val dataModule = module {
         provideApiService(BuildConfig.API_URL)
     }
 
-    
+
     fun provideHomeSource(apiServices: ApiServices): HomeRemoteDataSource {
         return HomeRemoteDataSource(apiServices)
     }
