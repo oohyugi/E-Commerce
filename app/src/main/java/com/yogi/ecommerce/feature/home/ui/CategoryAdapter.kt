@@ -24,7 +24,7 @@ class CategoryAdapter(val listener: CategoryAdapterListener) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = getItem(position)
 
-        holder.bind(data, listener)
+        holder.bind(data)
 
 
     }
@@ -47,8 +47,7 @@ class CategoryAdapter(val listener: CategoryAdapterListener) :
         }
 
         fun bind(
-            data: CategoryItemMdl?,
-            listener: CategoryAdapterListener
+            data: CategoryItemMdl?
         ) {
 
             tvTitle.text = data?.name

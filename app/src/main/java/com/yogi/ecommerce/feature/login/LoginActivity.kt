@@ -147,7 +147,6 @@ class LoginActivity : AppCompatActivity() {
             try {
                 val task = GoogleSignIn.getSignedInAccountFromIntent(data)
                 val account = task.getResult(ApiException::class.java)
-                val result = Auth.GoogleSignInApi.getSignInResultFromIntent(data)
                 wtf("onActivityResult: ", Gson().toJson(account))
 //                CompleteAccountActivity().startThisActivity(this,mUser)
 //                finish()

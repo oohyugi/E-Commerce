@@ -61,11 +61,11 @@ class HomeFragment : Fragment() {
                     is BaseViewState.Loading-> loadingState?.visibility = View.VISIBLE
                     is BaseViewState.Success-> {
                         loadingState?.visibility = View.GONE
-                        result.data?.let {result->
-                            homeAdapter.addHeaderAndSubmitList(result)
+                        result.data?.let {data->
+                            homeAdapter.addHeaderAndSubmitList(data)
                             etSearch?.visibility = View.VISIBLE
                             etSearch?.setOnClickListener {
-                                SearchActivity.startThisActivity(activity!!,Gson().toJson(result[0].data.productPromo))
+                                SearchActivity.startThisActivity(activity!!,Gson().toJson(data[0].data.productPromo))
                             }
                         }
 

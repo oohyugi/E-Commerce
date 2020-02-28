@@ -96,10 +96,10 @@ class ProductAdapter(private val baseList:List<ProductPromoItemMdl>?,val listene
 
                         // name match condition. this might differ depending on your requirement
                         // here we are looking for name or phone number match
-                        if (row.title != null) {
+
                             if (row.title.toLowerCase().contains(charString.toLowerCase())) {
                                 filteredList.add(row)
-                            }
+
                         }
 
                     }
